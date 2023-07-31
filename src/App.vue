@@ -1,7 +1,7 @@
 <script setup>
 import 'bootstrap'
-// import Header from '@/components/Header.vue'
-// import Footer from '@/components/Footer.vue'
+import Header from '@/components/Header.vue'
+import Footer from '@/components/Footer.vue'
 </script>
 
 <template>
@@ -12,7 +12,7 @@ import 'bootstrap'
                 <router-view />
             </div>
             <Footer />
-        </div>    
+        </div>
     </div>
 </template>
 
@@ -22,13 +22,12 @@ export default {
     watch: {
         $route: {
             immediate: true,
-            handler (to, from) {
-                document.title = (to.meta.title) ?  (to.meta.title + ' | DATFLIX') : 'DATFLIX'
+            handler(to, from) {
+                document.title = to.meta.title ? to.meta.title + ' | DATFLIX' : 'DATFLIX'
             }
         }
     }
 }
-
 </script>
 
 <style scoped>
